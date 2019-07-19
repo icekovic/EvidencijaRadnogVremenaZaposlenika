@@ -7,7 +7,7 @@ import { Observable} from 'rxjs';
 })
 export class DashboardService {
 
-  constructor(private http: httpClient) { 
+  constructor(private http: HttpClient) { 
   }
   
   getAll(): Observable<any> {

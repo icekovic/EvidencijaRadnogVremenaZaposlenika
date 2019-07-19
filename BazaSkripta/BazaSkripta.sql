@@ -4,29 +4,29 @@ go
 use EvidencijaRadnogVremenaZaposlenika
 go
 
-create table Zaposlenik
+create table zaposlenik
 (
-	IDZaposlenik int primary key identity not null,
-	Ime nvarchar(30) not null,
-	Prezime nvarchar(40 )not null,
-	Email nvarchar(80) not null,
-	Lozinka nvarchar(600) not null
+	id_zaposlenik int primary key identity not null,
+	ime nvarchar(30) not null,
+	prezime nvarchar(40 )not null,
+	email nvarchar(80) not null,
+	lozinka nvarchar(600) not null
 )
 
-create table Zapis
+create table zapis
 (
-	IDZapis int primary key identity not null,
-	Naziv nvarchar (50) not null,
-	Datum date not null,
-	VrijemeOd time not null,
-	VrijemeDo time not null,
-	Sati tinyint not null,
-	Minute tinyint not null
+	id_zapis int primary key identity not null,
+	naziv nvarchar (50) not null,
+	datum date not null,
+	vrijeme_od time not null,
+	vrijeme_do time not null,
+	sati tinyint not null,
+	minute tinyint not null
 )
 
-create table Raspored
+create table raspored
 (
-	IDRaspored int primary key identity not null,
-	Zapis int foreign key references Zapis (IDZapis),
-	Zaposlenik int foreign key references Zaposlenik (IDZaposlenik)
+	id_raspored int primary key identity not null,
+	zapis_id int foreign key references zapis (id_zapis),
+	zaposlenik_id int foreign key references zaposlenik (id_zaposlenik)
 )
